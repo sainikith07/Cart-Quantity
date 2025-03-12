@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #cart-display {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Shopping Cart</h1>
+    <p id="cart-display">Cart Quantity: 0</p>
+
+    <button onclick="showQuantity()">Show Quantity</button>
+    <button onclick="addToCart(1)">Add to Cart</button>
+    <button onclick="addToCart(2)">+2</button>
+    <button onclick="addToCart(3)">+3</button>
+    <button onclick="resetCart()">Reset Cart</button>
+
+    <script>
+        let count = 0;
+
+        function updateDisplay() {
+            document.getElementById('cart-display').innerText = `Cart Quantity: ${count}`;
+        }
+
+        function showQuantity() {
+            console.log(`Cart Quantity: ${count}`);
+            updateDisplay();
+        }
+
+        function addToCart(amount) {
+            count += amount;
+            updateDisplay();
+        }
+
+        function resetCart() {
+            count = 0;
+            console.log(`Cart is reset`);
+            updateDisplay();
+        }
+    </script>
+
+</body>
+</html>
